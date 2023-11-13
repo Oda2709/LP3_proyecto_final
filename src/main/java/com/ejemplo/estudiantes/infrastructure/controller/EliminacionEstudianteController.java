@@ -1,9 +1,10 @@
 package com.ejemplo.estudiantes.infrastructure.controller;
 
 import com.ejemplo.estudiantes.application.EliminacionEstudianteService;
-import com.ejemplo.estudiantes.domain.Estudiante;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -18,6 +19,7 @@ public class EliminacionEstudianteController {
     public void  eliminarEstudiante(@PathVariable("id") Long estudiantePorID) {
         log.info("Se eliminara un estudiante");
         eliminacionEstudianteService.eliminarEstudiante(estudiantePorID);
+
     }
 
 }
