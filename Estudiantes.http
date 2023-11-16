@@ -30,3 +30,5 @@ Content-Type: application/json
     "apellido": "Jesus",
     "edad": 22
 }
+
+//En visio se instala REST Client, para ejecutarse se guarda el archivo como .http y para ejecutarlo es con Ctrl+Alt+R
