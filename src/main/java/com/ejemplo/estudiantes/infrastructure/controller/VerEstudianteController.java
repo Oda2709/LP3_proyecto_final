@@ -21,12 +21,13 @@ public class VerEstudianteController {
 
     @GetMapping
     public List<Estudiante> obtenerEstudiantes() {
-        log.info("Se están pidiendo todos los estudiantes");
+        log.info("Se están solicitando todos los estudiantes");
         return verEstudianteService.obtenerEstudiantes();
     }
-   @GetMapping ("{id}") //forID
+
+    @GetMapping("{id}") //forID
     public Estudiante obtenerEstudiante(@PathVariable("id") Long EstudiantePorId) { //@PathVariable es el /... ejemplo estudiante/123
-        log.info("Se están pidiendo un estudiante");
+        log.info("Se está solicitando estudiante con el id:" + EstudiantePorId);
         return verEstudianteService.obtenerEstudiante(EstudiantePorId);
     }
 

@@ -18,6 +18,5 @@ public class CreacionEstudianteService {
                 EstudianteEntity estudianteResultante = estudianteRepository.save(entity);
 
                 return EstudianteMapper.INSTANCE.mapToDomain(estudianteResultante);
-
     }
 }

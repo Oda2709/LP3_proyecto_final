@@ -17,14 +17,15 @@ public class VerEstudianteService {
     public List<Estudiante> obtenerEstudiantes() {
         return estudianteRepository.findAll().stream()
                 .map(estudianteEntity ->
-                    Estudiante.builder()
-                            .id(estudianteEntity.getId())
-                            .edad(estudianteEntity.getEdad())
-                            .nombre(estudianteEntity.getNombre())
-                            .apellido(estudianteEntity.getApellido())
-                            .build())
+                        Estudiante.builder()
+                                .id(estudianteEntity.getId())
+                                .edad(estudianteEntity.getEdad())
+                                .nombre(estudianteEntity.getNombre())
+                                .apellido(estudianteEntity.getApellido())
+                                .build())
                 .collect(Collectors.toList());
     }
+
     public Estudiante obtenerEstudiante(Long EstudiantePorId) {
         return estudianteRepository.findById(EstudiantePorId)
                 .map(estudianteEntity ->
@@ -34,6 +35,6 @@ public class VerEstudianteService {
                                 .nombre(estudianteEntity.getNombre())
                                 .apellido(estudianteEntity.getApellido())
                                 .build())
-                .orElseThrow(() -> new RuntimeException("Usuario no existe"));
+                .orElseThrow(() -> new RuntimeException("Usuario con Id  " + EstudiantePorId + "  no existe"));
     }
 }
