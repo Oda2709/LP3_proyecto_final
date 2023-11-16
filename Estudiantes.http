@@ -1,11 +1,10 @@
-
 //Ver todo lo de la Base de datos
 GET http://localhost:8080/estudiantes/
 
 
 
 //Para ver por id 
-http://localhost:8080/estudiantes/2
+http://localhost:8080/estudiantes/7
 
 ##
 //Para crear sin id (Id es autoincrementable)
@@ -13,16 +12,16 @@ POST http://localhost:8080/estudiantes HTTP/1.1
 Content-Type: application/json
 
 {
-    "nombre": "Alan",
-    "apellido": "Jesus",
-    "edad": 30
+    "nombre": "Tata",
+    "apellido": "Cordoba",
+    "edad": 61
 }
 
 //Para eliminar
-DELETE  http://localhost:8080/estudiantes/5 HTTP/1.1   
+DELETE  http://localhost:8080/estudiantes/7 HTTP/1.1   
 
 //para actualizar
-PUT http://localhost:8080/estudiantes/3 HTTP/1.1 
+PUT http://localhost:8080/estudiantes/2 HTTP/1.1 
 Content-Type: application/json
 
 { 
