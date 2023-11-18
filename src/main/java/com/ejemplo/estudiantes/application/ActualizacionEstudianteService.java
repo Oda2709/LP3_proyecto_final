@@ -18,15 +18,11 @@ public class ActualizacionEstudianteService {
     private final EstudianteRepository estudianteRepository;
 
     public Estudiante actualizarEstudiante(Long id, Estudiante GuardaNuevoEstudiante) {
-        EstudianteEntity estudiante = estudianteRepository.findById(id) // Se conserva el Id del estudiante
+         estudianteRepository.findById(id) // Se conserva el Id del estudiante
                 .orElseThrow(() -> new ResolutionException("Ingreso un ID a actualizar no existente " + id));
 
-        EstudianteEntity ActuEstu = EstudianteEntity.builder()  // Variable que guarda los datos a actualizar
-                .id(estudiante.getId()) // Se debe poner el ID del estudiante ya creado para que tome el id actual, cuando no se pone se crea un clon al llamar el Put
-                .nombre(GuardaNuevoEstudiante.getNombre())
-                .apellido(GuardaNuevoEstudiante.getApellido())
-                .edad(GuardaNuevoEstudiante.getEdad())
-                .build();
+        EstudianteEntity ActuEstu = EstudianteMapper.INSTANCE.mapToEntity(GuardaNuevoEstudiante);
+        ActuEstu.setId(id);
 
         estudianteRepository.save(ActuEstu);
         log.info("Se actualizo el id: " + id);
