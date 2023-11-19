@@ -16,10 +16,8 @@ public class EliminacionEstudianteController {
 
     @DeleteMapping("{id}")
     public void eliminarEstudiante(@PathVariable("id") Long estudiantePorID) {
-        log.info("Se solicitar ser eliminado el id " + estudiantePorID + " de un estudiante: "); // en el log me muestra el ID del estudiante a ser eliminado
+        log.info("Se solicita ser eliminado el id " + estudiantePorID + " de un estudiante: ");
         eliminacionEstudianteService.eliminarEstudiante(estudiantePorID);
-
-
     }
 
 }

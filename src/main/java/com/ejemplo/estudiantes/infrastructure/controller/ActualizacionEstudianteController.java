@@ -17,8 +17,6 @@ public class ActualizacionEstudianteController {
     @PutMapping("{id}")
     public Estudiante actualizarEstudiante(@PathVariable("id") Long id, @RequestBody Estudiante estudiante) {
         log.info("Se actualizara estudiante con el ID " + id);
-
         return actualizacionEstudianteService.actualizarEstudiante(id, estudiante);
-
     }
 }

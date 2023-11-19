@@ -6,10 +6,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-@Slf4j //para que muestre los log
+@Slf4j
 @RestController
 @RequestMapping("estudiantes")
-@RequiredArgsConstructor //solo crea los atributos contructores que se creen como Final
+@RequiredArgsConstructor
 @ResponseBody
 
 public class CreacionEstudianteController {
@@ -17,7 +17,7 @@ public class CreacionEstudianteController {
 
     @PostMapping
     public Estudiante crearEstudiante(@RequestBody Estudiante estudiante) {
-        log.info("Se creo estudiante: " + estudiante); // Muestra en el Log que estudiante se creo
+        log.info("Se creo el estudiante: " + estudiante);
         return creacionEstudianteService.creaEstudiante(estudiante);
     }
 
