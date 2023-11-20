@@ -10,8 +10,8 @@ import javax.persistence.*;
 @Entity(name = "estudiante")
 @Data
 @Builder
-@NoArgsConstructor //Agrega el constructor vacio
-@AllArgsConstructor //Agrega el constructor que recibe TODOS los parametros
+@NoArgsConstructor
+@AllArgsConstructor
 public class EstudianteEntity {
 
     @Id

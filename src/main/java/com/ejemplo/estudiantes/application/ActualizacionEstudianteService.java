@@ -9,22 +9,24 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.lang.module.ResolutionException;
-
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ActualizacionEstudianteService {
 
     private final EstudianteRepository estudianteRepository;
 
-    public Estudiante actualizarEstudiante(Long id, Estudiante GuardaNuevoEstudiante) {
-         estudianteRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException(String.format("El Id " +id+" no existente para ser actualizado")));
+    public Estudiante actualizarEstudiante(Long id, Estudiante guardaNuevoEstudiante) {
+        estudianteRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(String.format("El Id " + id + " no existente para ser actualizado")));
 
-        EstudianteEntity ActuEstu = EstudianteMapper.INSTANCE.mapToEntity(GuardaNuevoEstudiante);
-        ActuEstu.setId(id);
+        EstudianteEntity actuEstu = EstudianteMapper.INSTANCE.mapToEntity(guardaNuevoEstudiante);
+        actuEstu.setId(id);
 
-        return EstudianteMapper.INSTANCE.mapToDomain(ActuEstu);
+        EstudianteEntity guardarNu = estudianteRepository.save(actuEstu);
+        log.info("Se actualizo el id :  " + id);
+
+        return EstudianteMapper.INSTANCE.mapToDomain(guardarNu);
 
     }
 

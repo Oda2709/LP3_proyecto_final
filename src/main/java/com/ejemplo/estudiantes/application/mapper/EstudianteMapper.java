@@ -11,5 +11,6 @@ public interface EstudianteMapper {
     EstudianteMapper INSTANCE = Mappers.getMapper(EstudianteMapper.class);
 
     EstudianteEntity mapToEntity(Estudiante estudiante);
+
     Estudiante mapToDomain(EstudianteEntity estudianteEntity);
 }

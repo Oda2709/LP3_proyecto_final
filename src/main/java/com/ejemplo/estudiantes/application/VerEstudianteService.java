@@ -31,9 +31,9 @@ public class VerEstudianteService {
                 .collect(Collectors.toList());
     }
 
-    public Estudiante obtenerEstudiante(Long EstudiantePorId) {
-        EstudianteEntity estuporId = estudianteRepository.findById(EstudiantePorId)
-                .orElseThrow(() -> new ResourceNotFoundException(String.format("Estudiante %d no encontrado ", EstudiantePorId)));
+    public Estudiante obtenerEstudiante(Long estudiantePorId) {
+        EstudianteEntity estuporId = estudianteRepository.findById(estudiantePorId)
+                .orElseThrow(() -> new ResourceNotFoundException(String.format("Estudiante %d no encontrado ", estudiantePorId)));
 
         return EstudianteMapper.INSTANCE.mapToDomain(estuporId);
     }

@@ -13,11 +13,11 @@ public class EliminacionEstudianteService {
     private final EstudianteRepository estudianteRepository;
 
     public void eliminarEstudiante(Long estudiantePorID) {
-        if(estudianteRepository.existsById(estudiantePorID)) {
+        if (estudianteRepository.existsById(estudiantePorID)) {
             estudianteRepository.deleteById(estudiantePorID);
             log.info("Se elimino estudiante con el id  " + estudiantePorID);
-        }else {
-            log.info("El estudiante con el id " +estudiantePorID+  " No existe");
+        } else {
+            log.info("El estudiante con el id " + estudiantePorID + " No existe");
         }
     }
 }

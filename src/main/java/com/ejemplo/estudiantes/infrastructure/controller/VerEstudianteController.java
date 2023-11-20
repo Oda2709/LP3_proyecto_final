@@ -23,9 +23,9 @@ public class VerEstudianteController {
     }
 
     @GetMapping("{id}") //forID
-    public Estudiante obtenerEstudiante(@PathVariable("id") Long EstudiantePorId) {
-        log.info("Se están solicitando el id " + EstudiantePorId + " los estudiantes");
-        return verEstudianteService.obtenerEstudiante(EstudiantePorId);
+    public Estudiante obtenerEstudiante(@PathVariable("id") Long estudiantePorId) {
+        log.info("Se están solicitando el id " + estudiantePorId);
+        return verEstudianteService.obtenerEstudiante(estudiantePorId);
     }
 
 

@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 public class CreacionEstudianteService {
     private final EstudianteRepository estudianteRepository;
 
-    public  Estudiante creaEstudiante (Estudiante estudiante) {
+    public Estudiante creaEstudiante(Estudiante estudiante) {
 
         EstudianteEntity entity = EstudianteMapper.INSTANCE.mapToEntity(estudiante);
-                EstudianteEntity estudianteResultante = estudianteRepository.save(entity);
+        EstudianteEntity estudianteResultante = estudianteRepository.save(entity);
 
-                return EstudianteMapper.INSTANCE.mapToDomain(estudianteResultante);
+        return EstudianteMapper.INSTANCE.mapToDomain(estudianteResultante);
     }
 }
